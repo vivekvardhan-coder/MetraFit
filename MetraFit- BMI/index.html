@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="bmi.png" type="image/png">
+    <title>Modern BMI Calculator</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">BMI Calculator</h1>
+        
+        <div class="gender-toggle">
+            <button class="toggle-btn male active" id="male">Male</button>
+            <button class="toggle-btn female" id="female">Female</button>
+        </div>
+        
+        <div class="unit-toggle">
+            <button class="toggle-btn active" id="metric">Metric</button>
+            <button class="toggle-btn" id="imperial">Imperial</button>
+        </div>
+        
+        <div id="metric-form">
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="Enter your height" min="50" max="250">
+            </div>
+            
+            <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter your weight" min="20" max="300">
+            </div>
+        </div>
+        
+        <div id="imperial-form" style="display: none;">
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="feet">Height (ft)</label>
+                    <input type="number" id="feet" placeholder="Feet" min="1" max="8">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inches">Height (in)</label>
+                    <input type="number" id="inches" placeholder="Inches" min="0" max="11">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="pounds">Weight (lbs)</label>
+                <input type="number" id="pounds" placeholder="Enter your weight" min="40" max="660">
+            </div>
+        </div>
+        
+        <button id="calculate-btn">Calculate BMI</button>
+        
+        <div class="result" id="result">
+            <h2 class="bmi-value" id="bmi-value">25.0</h2>
+            <span class="bmi-category" id="bmi-category">Normal Weight</span>
+            
+            <div class="progress-bar">
+                <div class="progress-indicator" id="progress-indicator"></div>
+                <div class="marker" style="left: 16.5%;">18.5</div>
+                <div class="marker" style="left: 25%;">25</div>
+                <div class="marker" style="left: 33.5%;">30</div>
+                <div class="marker-line" style="left: 16.5%;"></div>
+                <div class="marker-line" style="left: 25%;"></div>
+                <div class="marker-line" style="left: 33.5%;"></div>
+            </div>
+            
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="health-tips">Health Tips</button>
+                <button class="tab-btn" data-tab="food-suggestions">Food Suggestions</button>
+                <button class="tab-btn" data-tab="exercise-plans">Exercise Plans</button>
+            </div>
+            
+            <div id="health-tips" class="tab-content health-tips active">
+                <h3>Health Tips</h3>
+                <ul id="tips-list">
+                    <li>Maintain a balanced diet rich in fruits and vegetables</li>
+                    <li>Exercise regularly, aim for at least 150 minutes per week</li>
+                    <li>Stay hydrated by drinking at least 8 glasses of water daily</li>
+                </ul>
+            </div>
+            
+            <div id="food-suggestions" class="tab-content health-tips">
+                <h3>Food Suggestions</h3>
+                <ul id="food-list">
+                    <li>Loading suggestions based on your results...</li>
+                </ul>
+            </div>
+            
+            <div id="exercise-plans" class="tab-content health-tips">
+                <h3>Exercise Plans</h3>
+                <ul id="exercise-list">
+                    <li>Loading exercise recommendations based on your results...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
